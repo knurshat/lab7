@@ -1,15 +1,19 @@
 import pygame
 import time
-
+import os
 pygame.init()
 
 WIDTH, HEIGHT = 600, 400
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Mickey Clock")
 
-minute_hand = pygame.image.load(r"C:\Users\User\Desktop\lab7\images\right_hand.png")
-second_hand = pygame.image.load(r"C:\Users\User\Desktop\lab7\images\left_hand.png")
-clock_face = pygame.image.load(r"C:\Users\User\Desktop\lab7\images\mickeyclock.jpg")
+script_dir = os.path.dirname(__file__)
+image_path = os.path.join(script_dir,"images", "right_hand.png")
+minute_hand = pygame.image.load(image_path)
+image_path = os.path.join(script_dir,"images", "left_hand.png")
+second_hand = pygame.image.load(image_path)
+image_path = os.path.join(script_dir,"images", "mickeyclock.jpg")
+clock_face = pygame.image.load(image_path)
 clock_face = pygame.transform.scale(clock_face, (WIDTH, HEIGHT))
 CENTER = (WIDTH // 2, HEIGHT // 2)
 
